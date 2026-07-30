@@ -1,0 +1,77 @@
+generated: '2026-07-19'
+method: probed
+source: live DNS/TLS/HTTP probes of linear.com (the entity's own domain) and its redirect target
+note: Linear Technology was acquired by Analog Devices (closed 2017-03-10). The linear.com domain is still
+  registered and resolving, but is operated by Analog Devices and permanently redirects. Both the legacy
+  domain and the redirect target are recorded, and labeled, so the successor's posture is never mistaken
+  for this entity's own.
+hosts:
+- host: www.linear.com
+  role: legacy-primary
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Nov 17 23:59:59 2026 GMT
+  hsts: null
+  http_status: 301
+  redirects_to: https://www.analog.com
+- host: linear.com
+  role: legacy-apex
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Oct 20 23:59:59 2026 GMT
+  hsts: null
+  http_status: 301
+  redirects_to: https://www.linear.com/
+- host: www.analog.com
+  role: successor-redirect-target
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Nov 17 23:59:59 2026 GMT
+  hsts: null
+domains:
+- domain: linear.com
+  role: legacy
+  dnssec: false
+  caa: []
+  spf: true
+  spf_record: v=spf1 ip4:67.216.78.8 ip4:64.57.218.70 ip4:64.106.227.8 ip4:52.36.127.245 ip4:64.89.44.0/23
+    ip4:167.216.128.0/22 ip4:207.211.31.0/25 ip4:54.235.159.97 include:servers.mcsv.net include:spf-00123c01.pphosted.com
+    include:_spf.google.com ip4:12.218.215.72 ip4:38.111.151.72 ~all
+  dmarc: true
+  dmarc_policy: quarantine
+  dmarc_record: 'v=DMARC1; p=quarantine; pct=25; rua=mailto:netadmin@linear.com'
+- domain: analog.com
+  role: successor
+  dnssec: false
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: quarantine
+well_known_probes:
+  note: Probed on the entity's own host. No well-known document is served; every path returns a permanent
+    redirect to the Analog Devices "ADI + Linear combine" landing page. Absence is valid, expected data
+    for an acquired company.
+  host: https://www.linear.com
+  redirect_target: https://www.analog.com/en/landing-pages/001/adi-linear-combine/index.html?source=ltc
+  results:
+  - path: /.well-known/security.txt
+    status: 301
+    found: false
+  - path: /.well-known/openid-configuration
+    status: 301
+    found: false
+  - path: /.well-known/oauth-authorization-server
+    status: 301
+    found: false
+  - path: /.well-known/api-catalog
+    status: 301
+    found: false
+  - path: /.well-known/ai-plugin.json
+    status: 301
+    found: false
+  - path: /llms.txt
+    status: 301
+    found: false
+  - path: /openapi.json
+    status: 301
+    found: false
