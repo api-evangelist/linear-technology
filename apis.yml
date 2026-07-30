@@ -1,24 +1,79 @@
 aid: linear-technology
 name: Linear Technology
-description: 'Linear Technology is a company surfaced as a portfolio company of kleiner-perkins and added
-  to the API Evangelist network as a stub for enrichment. Sector: hardtech. This profile is a lead awaiting
-  the enrichment pipeline.'
+description: 'Linear Technology Corporation was an American semiconductor company founded in 1981 by Robert
+  H. Swanson Jr. and Robert C. Dobkin and headquartered in Milpitas, California. It designed and manufactured
+  high-performance analog integrated circuits across data conversion (ADCs and DACs), signal conditioning
+  (operational amplifiers, comparators, voltage references), power management (switching and linear regulators,
+  battery management, LED drivers), interface (RS232, RS485), radio frequency, oscillators, and space and
+  military ICs, shipping a catalog of more than 7,500 products. Analog Devices agreed to acquire Linear
+  Technology in July 2016 in a cash-and-stock deal valued at approximately $14.8 billion, and the acquisition
+  closed on March 10, 2017. Linear Technology no longer operates as an independent company: the linear.com
+  domain permanently redirects to Analog Devices, and the Linear name survives only as the "Power by Linear"
+  product brand. Linear Technology publishes no independent developer portal, documentation, or API surface
+  of its own; its developer-facing successor in this network is analog-devices.'
 url: https://raw.githubusercontent.com/api-evangelist/linear-technology/refs/heads/main/apis.yml
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/linear-technology.png
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - kleiner-perkins
-x-tier: stub
-x-tier-reason: portfolio-lead
+x-backed-by-note: Inherited from the VC-portfolio stub that created this repo; not independently verified
+  in this enrichment round.
+x-status: acquired
+x-acquired-by: analog-devices
+x-acquired-announced: '2016-07'
+x-acquired-closed: '2017-03-10'
+x-acquired-value: USD 14.8 billion (cash and stock)
+x-successor: analog-devices
+x-successor-repo: https://github.com/api-evangelist/analog-devices
+x-tier: archived
+x-tier-reason: acquired-no-independent-api-surface
+x-enrichment-note: 'Enrichment round 2026-07-19 found no independent API surface. Every probed path on
+  www.linear.com (/.well-known/security.txt, /.well-known/openid-configuration, /.well-known/oauth-authorization-server,
+  /.well-known/api-catalog, /.well-known/ai-plugin.json, /llms.txt, /openapi.json) returns HTTP 301 to
+  the Analog Devices "ADI + Linear combine" landing page. No GitHub organization, no first-party packages
+  on npm/PyPI, no OpenAPI, no MCP server. The npm package @linear/sdk belongs to Linear (linear.app), an
+  unrelated issue-tracking company, and is deliberately NOT associated with this repo. API artifacts for
+  the surviving business live in all/analog-devices.'
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-19'
 tags:
 - Company
 - Hardtech
+- Semiconductor
+- Analog
+- Integrated Circuits
+- Power Management
+- Acquired
 apis: []
+common:
+- type: DomainSecurity
+  url: security/linear-technology-domain-security.yml
+- type: Website
+  url: https://www.analog.com/en/landing-pages/001/adi-linear-combine/index.html?source=ltc
+- type: Wikipedia
+  url: https://en.wikipedia.org/wiki/Linear_Technology
+- type: Successor
+  url: https://raw.githubusercontent.com/api-evangelist/analog-devices/refs/heads/main/apis.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence
