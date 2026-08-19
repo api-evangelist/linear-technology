@@ -46,7 +46,7 @@ x-enrichment-note: 'Enrichment round 2026-07-19 found no independent API surface
   on npm/PyPI, no OpenAPI, no MCP server. The npm package @linear/sdk belongs to Linear (linear.app), an
   unrelated issue-tracking company, and is deliberately NOT associated with this repo. API artifacts for
   the surviving business live in all/analog-devices.'
-specificationVersion: '0.20'
+specificationVersion: '0.23'
 created: '2026-07-17'
 modified: '2026-07-19'
 tags:
