@@ -12,6 +12,17 @@ description: 'Linear Technology Corporation was an American semiconductor compan
   product brand. Linear Technology publishes no independent developer portal, documentation, or API surface
   of its own; its developer-facing successor in this network is analog-devices.'
 url: https://raw.githubusercontent.com/api-evangelist/linear-technology/refs/heads/main/apis.yml
+deliveryModel:
+  model: unknown
+  open_source: false
+  commercial: false
+  callable_host: false
+  label: Delivery model not determined — needs a product licence on record
+  confidence: low
+  source:
+  - none
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: unknown
